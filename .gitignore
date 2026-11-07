@@ -1,0 +1,18 @@
+# Build & Distribution Artifacts
+*.zip
+dist/
+releases/
+
+# Chrome Extension local cache & metadata
+_metadata/
+
+# Binary docs
+*.docx
+
+# OS metadata
+Thumbs.db
+.DS_Store
+
+# Node / Logs
+node_modules/
+*.log

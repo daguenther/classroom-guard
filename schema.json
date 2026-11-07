@@ -1,0 +1,111 @@
+{
+  "type": "object",
+  "properties": {
+    "mode": {
+      "title": "Operating Mode",
+      "description": "Operating mode: 'TARGET_DOMAINS_ONLY' (default - blocks videos and image search specifically in Google Docs, Slides, Sheets, and their embeds; leaves all other sites open) or 'BLOCK_ALL_EXCEPT_ALLOWLIST' (blocks videos everywhere except allowlisted educational sites).",
+      "type": "string",
+      "enum": [
+        "TARGET_DOMAINS_ONLY",
+        "BLOCK_ALL_EXCEPT_ALLOWLIST"
+      ]
+    },
+    "blockDocsVideo": {
+      "title": "Block Video in Google Docs, Slides & Sheets",
+      "description": "If true (default), blocks embedded YouTube and video playback inside Google Docs, Google Slides, and Google Sheets.",
+      "type": "boolean"
+    },
+    "blockImageSearch": {
+      "title": "Block Web Image Search in Google Docs & Slides",
+      "description": "If true (default), removes the 'Search the web' / 'Google Images' options and image search sidebars in Google Docs, Slides, and Sheets. Safe Stock images and file uploads remain permitted.",
+      "type": "boolean"
+    },
+    "blockExploreTool": {
+      "title": "Block Explore Tool in Google Docs & Slides",
+      "description": "If true (default), removes the Explore tool (built-in web and image search panel / keyboard shortcuts) in Google Docs and Slides.",
+      "type": "boolean"
+    },
+    "blockGifs": {
+      "title": "Block GIFs in Google Docs & Slides",
+      "description": "If true, disables GIF searching, importing, pasting, and uploading in Google Docs and Slides. Defaults to false (allowed).",
+      "type": "boolean"
+    },
+    "blockAiOverview": {
+      "title": "Block Google Search AI Overview",
+      "description": "If true (default), blocks Google Search AI Overviews across student searches.",
+      "type": "boolean"
+    },
+    "aiOverviewStrategy": {
+      "title": "AI Overview Blocking Strategy",
+      "description": "Strategy for blocking AI Overview: 'web_filter' (default - network redirect to Google's clean Web results tab udm=14, preventing AI Overview from generating) or 'hide_only' (keeps default tab and removes AI Overview via CSS/DOM).",
+      "type": "string",
+      "enum": [
+        "web_filter",
+        "hide_only"
+      ]
+    },
+    "blockAiMode": {
+      "title": "Block Google Search AI Mode",
+      "description": "If true (default), blocks and redirects Google Search AI Mode (udm=50) to standard search results.",
+      "type": "boolean"
+    },
+    "aiOverviewHeadingTerms": {
+      "title": "Additional AI Overview Heading Terms",
+      "description": "Custom heading labels to identify and block AI Overview (merged with built-in multilingual list). Allows remote fixes without republishing the extension.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "aiOverviewSelectors": {
+      "title": "Additional AI Overview CSS Selectors",
+      "description": "Custom CSS selectors to hide in Google Search if Google rotates classes. Allows remote fixes without republishing the extension.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "imageSearchTerms": {
+      "title": "Additional Image Search Terms to Block",
+      "description": "Custom menu/button labels to block in Google Docs/Slides image insertion menus (merged with built-in multilingual list).",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "targetDomains": {
+      "title": "Target Domains to Block Videos On",
+      "description": "List of domains where videos are blocked (defaults to ['docs.google.com']). Used in TARGET_DOMAINS_ONLY mode.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowGoogleVids": {
+      "title": "Allow Google Vids",
+      "description": "If true (default), allows access to Google Vids (vids.google.com and docs.google.com/videos) while keeping YouTube embeds blocked.",
+      "type": "boolean"
+    },
+    "extraBlockedDomains": {
+      "title": "Additional Blocked Video/Embed Domains",
+      "description": "List of additional domains (e.g. new YouTube proxy or embed domains) to block across non-allowlisted sites without republishing the extension.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extraAllowedTopDomains": {
+      "title": "Additional Allowed Top-Level Domains",
+      "description": "List of additional top-level educational domains where embedded videos are permitted in BLOCK_ALL_EXCEPT_ALLOWLIST mode.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blockDocsEmbedIframes": {
+      "title": "Block Embedded Docs/Slides Iframes on Third-Party Sites",
+      "description": "If true, completely strips docs.google.com embedded iframes on third-party sites. If false (default), slides can be viewed but videos inside them are destroyed.",
+      "type": "boolean"
+    }
+  }
+}

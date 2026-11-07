@@ -1,0 +1,136 @@
+[
+  {
+    "id": 100,
+    "priority": 1000,
+    "action": { "type": "allowAllRequests" },
+    "condition": {
+      "requestDomains": [
+        "youtube.com",
+        "classroom.google.com",
+        "ixl.com",
+        "drive.google.com",
+        "vids.google.com"
+      ],
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 1,
+    "priority": 100,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "youtubeeducation.com",
+        "youtube-nocookie.com",
+        "youtubekids.com",
+        "youtu.be"
+      ],
+      "initiatorDomains": [
+        "docs.google.com",
+        "vids.google.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "script",
+        "xmlhttprequest",
+        "media",
+        "object",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 100,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "*youtube*/embed",
+      "initiatorDomains": [
+        "docs.google.com",
+        "vids.google.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "script",
+        "xmlhttprequest",
+        "media",
+        "object",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 100,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||youtube.com/v/",
+      "initiatorDomains": [
+        "docs.google.com",
+        "vids.google.com"
+      ],
+      "resourceTypes": [
+        "sub_frame",
+        "script",
+        "xmlhttprequest",
+        "media",
+        "object",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 100,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "googlevideo.com"
+      ],
+      "initiatorDomains": [
+        "docs.google.com"
+      ],
+      "resourceTypes": [
+        "media",
+        "xmlhttprequest",
+        "sub_frame",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 100,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/youtubei/v1/player",
+      "initiatorDomains": [
+        "docs.google.com",
+        "vids.google.com"
+      ],
+      "resourceTypes": [
+        "xmlhttprequest",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 100,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/s/player/*player_ias",
+      "initiatorDomains": [
+        "docs.google.com",
+        "vids.google.com"
+      ],
+      "resourceTypes": [
+        "script",
+        "xmlhttprequest",
+        "other"
+      ]
+    }
+  }
+]

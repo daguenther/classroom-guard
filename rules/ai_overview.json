@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1001,
+    "priority": 30,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "udm", "value": "14" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "*google.*/search*udm=50*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 1002,
+    "priority": 20,
+    "action": {
+      "type": "allow"
+    },
+    "condition": {
+      "urlFilter": "*google.*/search*udm=*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 1003,
+    "priority": 20,
+    "action": {
+      "type": "allow"
+    },
+    "condition": {
+      "urlFilter": "*google.*/search*tbm=*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 1004,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "udm", "value": "14" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "*google.*/search?*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 1005,
+    "priority": 10,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "udm", "value": "14" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "*google.*/search&*",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

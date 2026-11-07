@@ -1,0 +1,91 @@
+{
+  "manifest_version": 3,
+  "name": "Classroom Guard",
+  "version": "1.6.0",
+  "description": "Blocks embedded videos, Docs image searching, and Google Search AI Overview.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "storage": {
+    "managed_schema": "schema.json"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "video_lockdown_rules",
+        "enabled": true,
+        "path": "rules/rules.json"
+      },
+      {
+        "id": "ai_overview_rules",
+        "enabled": true,
+        "path": "rules/ai_overview.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["config.js", "content/nuke-main.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["config.js", "content/nuke-isolated.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_origin_as_fallback": true,
+      "world": "ISOLATED"
+    },
+    {
+      "matches": [
+        "*://*.google.com/search*",
+        "*://*.google.ca/search*",
+        "*://*.google.co.uk/search*",
+        "*://*.google.com.au/search*",
+        "*://*.google.de/search*",
+        "*://*.google.fr/search*",
+        "*://*.google.es/search*",
+        "*://*.google.it/search*",
+        "*://*.google.nl/search*",
+        "*://*.google.co.jp/search*",
+        "*://*.google.co.in/search*",
+        "*://*.google.com.br/search*",
+        "*://*.google.com.mx/search*",
+        "*://*.google.ch/search*",
+        "*://*.google.be/search*",
+        "*://*.google.at/search*",
+        "*://*.google.pl/search*",
+        "*://*.google.se/search*",
+        "*://*.google.no/search*",
+        "*://*.google.dk/search*",
+        "*://*.google.fi/search*",
+        "*://*.google.co.nz/search*",
+        "*://*.google.ie/search*",
+        "*://*.google.co.za/search*",
+        "*://*.google.com.sg/search*",
+        "*://*.google.com.hk/search*",
+        "*://*.google.com.tw/search*"
+      ],
+      "js": ["content/search-ai-overview.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
