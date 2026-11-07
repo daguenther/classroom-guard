@@ -1,6 +1,6 @@
-# Chrome Web Store Listing — Classroom Guard
+# Private / Internal Chrome Web Store Listing Template — Classroom Guard
 
-> Last Updated: 2026-10-30
+> This template is for school IT administrators uploading Classroom Guard as a private, domain-restricted extension to their school district's Google Workspace.
 
 ## Store Listing
 

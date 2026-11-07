@@ -14,5 +14,7 @@
 - **`scripting` & `tabs`:** Used strictly locally on browser startup or extension installation to apply video and image search playback restrictions to already-open tabs.
 - **`storage`:** Used strictly to read school enterprise policies deployed via the Google Admin Console and manage in-memory session markers locally.
 
-## Contact
-If you have questions regarding this privacy policy, please contact your school district's IT Administration department.
+## Contact & Deployment Note
+This policy is provided as a ready-to-use template for schools and school districts deploying Classroom Guard internally. Because the extension runs 100% locally and transmits zero data, districts can host this policy directly on their internal IT knowledge base, district website, or GitHub Pages when configuring private deployment.
+
+For technical questions or issues regarding the open-source codebase, open an issue on the GitHub repository. For district student policy inquiries, please contact your school district's IT Administration department.

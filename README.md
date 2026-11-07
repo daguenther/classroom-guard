@@ -131,3 +131,54 @@ If Google alters search classes or introduces new bypass terms, push them instan
    - Click **Insert → Image**: notice **Search the web** is completely removed (Safe Stock, Drive, and Upload remain).
    - Check the bottom-right corner: the **Explore** widget is removed.
    - Open a presentation with an embedded YouTube video: the video player is stripped and blocked from streaming.
+
+
+---
+
+## Internal District Deployment Guide
+
+Classroom Guard is distributed as an open-source package for school IT administrators to publish and deploy internally within their own Google Workspace domains.
+
+### Option A: Private Domain-Restricted Chrome Web Store Upload (Recommended)
+1. **Build the Release ZIP**: Run `node build.js` to produce `dist/classroom-guard-v1.6.0.zip` (or download the pre-built zip from the repository's GitHub Releases).
+2. Open the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole).
+3. Click **Add new item** and upload `classroom-guard-v1.6.0.zip`.
+4. Complete the listing fields using the ready-to-copy template in [CHROMEWEBSTORE.md](file:///home/antigravity/daguenther/classroom-guard/CHROMEWEBSTORE.md).
+5. Under the **Distribution** tab:
+   - Select **Private**.
+   - Check **Domain restricted** and select your school district's Google Workspace domain (e.g. `yourdistrict.org`).
+6. Publish the extension. Within minutes, it will be available exclusively inside your district's internal Chrome Web Store catalog.
+7. In **Google Admin Console** (`admin.google.com`), go to **Devices → Chrome → Apps & extensions → Users & browsers**, select your Student OU, add Classroom Guard, set it to **Force install**, and configure policy values using [schema.json](file:///home/antigravity/daguenther/classroom-guard/schema.json).
+
+### Option B: Direct Extension Deployment via Google Admin Console
+1. Build the zip (`node build.js`).
+2. In **Google Admin Console**, navigate to **Devices → Chrome → Apps & extensions → Users & browsers**.
+3. Select the target student Organizational Unit (OU).
+4. Click the yellow **+** button and select **Add Chrome app or extension by ID** or upload your packaged app.
+5. Paste the managed policy JSON schema from `schema.json` to configure remote enforcement.
+
+---
+
+## Disclaimers & Warranty ("AS IS")
+
+### "As Is" Warranty & Limitation of Liability
+This software is provided by the copyright holders and contributors **"AS IS"** and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
+
+### Best-Effort Platform Defense Notice
+Classroom Guard operates by enforcing network-level declarative rules and semantic DOM observation within Google Chrome. Third-party platforms (including Google Docs, Google Slides, Google Search, and YouTube) continually evolve their user interfaces, query parameters (`udm=14`, `udm=50`), class hierarchies, and embed architectures:
+- Classroom Guard is developed on a **best-effort basis**. No guarantee is made that 100% of student bypass attempts will be prevented across all future Google updates.
+- Classroom Guard is designed as an administrative companion and is **not a substitute** for comprehensive CIPA-compliant firewall/DNS filtering or educator supervision.
+- School IT administrators should test new extension updates in a test OU prior to district-wide rollouts.
+
+### Non-Affiliation & Trademark Notice
+Classroom Guard is an independent open-source project and is **not affiliated with, endorsed by, sponsored by, or associated with Google LLC, YouTube, IXL Learning, Tenor, or Alphabet Inc.**
+Google, Google Docs, Google Slides, Google Sheets, Google Classroom, Google Drive, Google Search, Chromebook, and YouTube are trademarks or registered trademarks of Google LLC.
+
+### Student Privacy & Regulatory Compliance (FERPA / COPPA / CSPC)
+Classroom Guard operates 100% locally on the student device. It does not collect, log, store, or transmit any student personal information, browsing history, or search queries. Deploying institutions are responsible for ensuring that extension settings and device management policies align with their district's Acceptable Use Policies and applicable student data privacy regulations.
+
+---
+
+## License
+
+Distributed under the [MIT License](file:///home/antigravity/daguenther/classroom-guard/LICENSE). See `LICENSE` for full legal text.
