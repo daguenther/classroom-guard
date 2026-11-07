@@ -2,6 +2,9 @@
 
 An ultra-lightweight, future-proof Manifest V3 Chrome Extension designed for K–12 student Chromebook and browser deployments.
 
+> [!NOTE]
+> **AI-Assisted Project**: This project—including all extension source code, build utilities, schema definitions, and documentation (such as this README)—was authored with the assistance of artificial intelligence (AI). Please review the [AI-Assisted Development Disclaimer](#ai-assisted-development-disclaimer) before deploying.
+
 Classroom Guard provides **three independent, policy-configurable protections**:
 
 1. **Setting 1: Video Lockdown in Google Docs, Slides & Sheets**
@@ -160,6 +163,11 @@ Classroom Guard is distributed as an open-source package for school IT administr
 ---
 
 ## Disclaimers & Warranty ("AS IS")
+
+### AI-Assisted Development Disclaimer
+This project—including all extension source code, background scripts, content injection modules, build utilities, policy schemas (`schema.json`), and documentation (including this README)—was created and authored with the assistance of artificial intelligence (AI). 
+
+While the codebase has undergone functional validation, architecture design, and syntax verification, AI-assisted software and documentation may contain inaccuracies, unintended behaviors, edge-case bugs, or omissions. School IT administrators and developers are strongly advised to independently review the code, evaluate it against their organization's technical and security requirements, and thoroughly test enforcement in an isolated staging or test Organizational Unit (OU) prior to any district-wide production deployment.
 
 ### "As Is" Warranty & Limitation of Liability
 This software is provided by the copyright holders and contributors **"AS IS"** and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.

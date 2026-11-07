@@ -76,6 +76,9 @@ See ready-to-host policy text in `store-assets/PRIVACY_POLICY.md` (host on your 
 **Visibility**: Private (Domain-restricted for Google Workspace for Education deployment) or Unlisted
 **Regions**: All regions
 
+## AI Disclosure
+This extension, its configuration schema, and its supporting documentation were authored with the assistance of artificial intelligence (AI). Please test thoroughly in an isolated test OU before broad deployment.
+
 ## Developer Info
 
 **Publisher Name** [REQUIRED]
