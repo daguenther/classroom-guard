@@ -147,7 +147,7 @@ Classroom Guard is distributed as an open-source package for school IT administr
 5. Under the **Distribution** tab:
    - Select **Private**.
    - Check **Domain restricted** and select your school district's Google Workspace domain (e.g. `yourdistrict.org`).
-6. Publish the extension. Within minutes, it will be available exclusively inside your district's internal Chrome Web Store catalog.
+6. Publish the extension. Private domain-restricted items bypass standard public review queues, but Google still performs automated processing; it is typically indexed and available in your district's internal Chrome Web Store catalog shortly (usually within an hour or two).
 7. In **Google Admin Console** (`admin.google.com`), go to **Devices → Chrome → Apps & extensions → Users & browsers**, select your Student OU, add Classroom Guard, set it to **Force install**, and configure policy values using [schema.json](file:///home/antigravity/daguenther/classroom-guard/schema.json).
 
 ### Option B: Direct Extension Deployment via Google Admin Console
